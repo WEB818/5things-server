@@ -5,5 +5,6 @@ CREATE TABLE journal
 (),
   timer TIME NOT NULL,
   mood INTEGER,
-  journal_entry TEXT
+  journal_entry TEXT,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE NOT NULL
 );

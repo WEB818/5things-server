@@ -5,6 +5,7 @@ const cors = require("cors");
 const { NODE_ENV } = require("./config");
 const errorHandler = require("./middleware/error-handler");
 const authRouter = require("./auth/auth-router");
+const usersRouter = require("./user/user-router");
 
 const app = express();
 
@@ -20,4 +21,5 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRouter);
+app.use("/api/users", usersRouter);
 module.exports = app;
